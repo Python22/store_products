@@ -37,20 +37,20 @@ namespace store_products
         private void load_data(object sender, EventArgs e) { }
     }
 
-    public class Prodcuct
+    public class Product
     {
         public string name;
         public string manufacturer;
         public double price;
 
-        public Prodcuct() 
+        public Product() 
         {
             this.name = "No name";
             this.manufacturer = "No data";
             this.price = 0.0;
         }
 
-        public Prodcuct(string name, string manufacturer, double price)
+        public Product(string name, string manufacturer, double price)
         {
             this.name = name;
             this.manufacturer = manufacturer;
