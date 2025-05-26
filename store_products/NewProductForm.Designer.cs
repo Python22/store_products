@@ -94,6 +94,7 @@
             // 
             // new_product_add_button
             // 
+            this.new_product_add_button.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.new_product_add_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.new_product_add_button.Location = new System.Drawing.Point(16, 231);
             this.new_product_add_button.Name = "new_product_add_button";

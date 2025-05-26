@@ -12,6 +12,8 @@ namespace store_products
 {
     public partial class Form1 : Form
     {
+        public List<Product> all_products = new List<Product>();
+
         public Form1()
         {
             InitializeComponent();
@@ -21,13 +23,29 @@ namespace store_products
             clear_button.Click += clear_products;
             save_button.Click += save_data;
             load_button.Click += load_data;
+
+            all_products.Add(new Product("i5-13500", "Intel", 15000));
+            all_products.Add(new Product("i3-13300", "Intel", 10000));
+            all_products.Add(new Product("i7-13700", "Intel", 22000));
+            update_product_display_list();
+        }
+
+        private void update_product_display_list()
+        {
+            all_products_list_box.DataSource = all_products;
         }
 
         private void add_product(object sender, EventArgs e) 
         { 
             NewProductForm new_product_form = new NewProductForm();
-            if (new_product_form.ShowDialog() == DialogResult.OK) { 
-            
+            if (new_product_form.ShowDialog() == DialogResult.OK) {
+                all_products.Add(new Product(
+                    new_product_form.product_name, 
+                    new_product_form.manufacturer_name, 
+                    Convert.ToDouble(new_product_form.price)
+                    )
+                );
+                update_product_display_list();
             }
         }
         private void delete_product(object sender, EventArgs e) { }
