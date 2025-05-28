@@ -33,19 +33,23 @@ namespace store_products
         private void update_product_display_list()
         {
             all_products_list_box.DataSource = all_products;
+            
         }
 
         private void add_product(object sender, EventArgs e) 
-        { 
-            NewProductForm new_product_form = new NewProductForm();
-            if (new_product_form.ShowDialog() == DialogResult.OK) {
-                all_products.Add(new Product(
-                    new_product_form.product_name, 
-                    new_product_form.manufacturer_name, 
-                    Convert.ToDouble(new_product_form.price)
-                    )
-                );
-                update_product_display_list();
+        {
+            using (NewProductForm new_product_form = new NewProductForm())
+            {
+                if (new_product_form.ShowDialog() == DialogResult.OK)
+                {
+                    all_products.Add(new Product(
+                        new_product_form.product_name,
+                        new_product_form.manufacturer_name,
+                        Convert.ToDouble(new_product_form.price)
+                        )
+                    );
+                    update_product_display_list();
+                }
             }
         }
         private void delete_product(object sender, EventArgs e) { }

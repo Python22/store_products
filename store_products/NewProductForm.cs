@@ -28,6 +28,8 @@ namespace store_products
             product_name = product_name_text_box.Text;
             manufacturer_name = manufacturer_name_text_box.Text;
             price = price_text_box.Text;
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
         private void cancel_click(object sender, EventArgs e) { 
             this.Close();
