@@ -12,9 +12,9 @@ namespace store_products
 {
     public partial class NewProductForm : Form
     {
-        public string product_name;
-        public string manufacturer_name;
-        public string price;
+        public string product_name { get; set; }
+        public string manufacturer_name { get; set; }
+        public string price { get; set; }
 
         public NewProductForm()
         {
